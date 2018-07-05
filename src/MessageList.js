@@ -2,27 +2,44 @@ import React from 'react'
 
 import Message from './Message'
 
-const MessageList = (props) => {
+const MessageList = ({ messages }) => {
   return (
-    <div className="MessageList" style = {styles.list}>
+    <div
+      className="MessageList"
+      style={styles.messageList}
+    >
+      <div
+        className="roomAnnouncement"
+        style={styles.roomAnnouncement}
+      >
+        <h3 style={styles.h3}>
+          #general
+        </h3>
+        <p>This is the very beginning of the #general room.</p>
+      </div>
+
       {
-        props.messages.map(msg => (
-          <Message message={msg} key={msg.id} />
+        messages.map(msg => (
+          <Message
+            message={msg}
+            key={msg.id}
+          />
         ))
       }
     </div>
   )
 }
+
 const styles = {
-  list: {
+  messageList: {
     backgroundColor: 'white',
     flex: 1,
     paddingBottom: '1rem',
     overflowY: 'scroll',
   },
 
-  announcement: {
-    padding: '2rem 1rem 10rem',
+  roomAnnouncement: {
+    padding: '2rem 1rem',
   },
 
   h3: {
