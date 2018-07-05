@@ -13,5 +13,21 @@ const MessageList = (props) => {
     </div>
   )
 }
+const styles = {
+  list: {
+    backgroundColor: 'white',
+    flex: 1,
+    paddingBottom: '1rem',
+    overflowY: 'scroll',
+  },
+
+  announcement: {
+    padding: '2rem 1rem 10rem',
+  },
+
+  h3: {
+    fontSize: '1.5rem',
+  },
+}
 
 export default MessageList

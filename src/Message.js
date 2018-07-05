@@ -7,5 +7,12 @@ const Message = (props) => {
     </div>
   )
 }
+const styles = {
+  message: {
+    display: 'flex',
+    marginTop: '1rem',
+    padding: '1rem 1rem',
+  }
 
+}
 export default Message
