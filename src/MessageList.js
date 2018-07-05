@@ -4,7 +4,7 @@ import Message from './Message'
 
 const MessageList = (props) => {
   return (
-    <div className="MessageList">
+    <div className="MessageList" style = {styles.list}>
       {
         props.messages.map(msg => (
           <Message message={msg} key={msg.id} />

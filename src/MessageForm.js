@@ -19,7 +19,7 @@ class MessageForm extends Component {
     return (
       <form
         className="MessageForm"
-        onSubmit={this.handleSubmit}
+        onSubmit={this.handleSubmit }style = {styles.form} 
       >
         <input
           autoFocus
@@ -29,8 +29,9 @@ class MessageForm extends Component {
           placeholder="Type a message..."
           value={this.state.body}
           onChange={this.handleChange}
+          style = {styles.input}
         />
-        <button type="submit">
+        <button type="submit" style = {styles.button}>
           Send
         </button>
       </form>
