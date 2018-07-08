@@ -11,6 +11,7 @@ class Chat extends Component {
     this.state = {
       messages: [],
     }
+    base.syncState();
   }
 
   addMessage = (body) => {
