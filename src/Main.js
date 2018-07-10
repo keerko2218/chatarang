@@ -6,18 +6,19 @@ import Chat from './Chat'
 class Main extends Component {
   state = {
     room: {
-      name: 's3morning',
+      name: 's3afternoon',
       description: 'Ask questions and share code',
     },
+
     rooms: {
-      s3morning: {
-        name: 's3morning',
+      s3afternoon: {
+        name: 's3afternoon',
         description: 'Ask questions and share code',
       },
 
       general: {
         name: 'general',
-        description: 'Chat about stuff',
+        description: 'Chat about whatever',
       },
 
       random: {
@@ -39,6 +40,7 @@ class Main extends Component {
           user={this.props.user}
           signOut={this.props.signOut}
           rooms={this.state.rooms}
+          setCurrentRoom = {this.setCurrentRoom}
         />
         <Chat
           user={this.props.user}

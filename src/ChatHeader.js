@@ -36,7 +36,7 @@ const styles = {
     color: '#999',
     margin: 0,
     fontSize: '0.8rem',
-  }
+  },
 }
 
 export default ChatHeader
