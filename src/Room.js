@@ -1,37 +1,38 @@
 import React from 'react'
-import { StyleSheet, css } from 'aphrodite'
+import moment from 'moment'
 
-const Room = ({ roomName }) => {
-
+const Metadata = ({ message }) => {
   return (
-    <li className={css(styles.item)} key={roomName}>
-      <a href="/" className={css(styles.link)}>
-        {roomName}
-      </a>
-    </li>
+    <div
+      className="Metadata"
+      style={styles.metadata}
+    >
+      <div style={styles.user}>
+        {message.user.displayName}
+      </div>
+      <div style={styles.time}>
+        {/* {message.createdAt && moment(message.createdAt).format('D MMM @ h:mm a')} */}
+        {message.createdAt && moment(message.createdAt).fromNow()}
+      </div>
+    </div>
   )
-
-
 }
 
-const styles = StyleSheet.create({
-  item: {
-    marginBottom: '0.5rem',
+const styles = {
+  metadata: {
+    display: 'flex',
+    alignItems: 'baseline',
   },
 
-  link: {
-    display: 'block',
-    color: 'whitesmoke',
-    textDecoration: 'none',
-
-    '::before': {
-      content: '"# "',
-    },
-
-    ':hover': {
-      backgroundColor: 'rgba(255, 255, 255, 0.2)',
-    },
+  user: {
+    fontWeight: 'bold',
+    marginRight: '0.5rem',
   },
-})
 
-export default Room
+  time: {
+    color: '#999',
+    fontSize: '0.8rem',
+  },
+}
+
+export default Metadata
