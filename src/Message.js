@@ -1,47 +1,36 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-import Message from './Message'
+import Avatar from './Avatar'
+import Metadata from './Metadata'
 
-class MessageList extends Component {
-  render() {
-    const { messages, room } = this.props
-    return (
-      <div
-        className="MessageList"
-        style={styles.messageList}
-      >
-        <div style={styles.roomAnnouncement}>
-          <h3 style={styles.h3}>
-            #{room.name}
-          </h3>
-          <p>This is the very beginning of the #{room.name} room.</p>
+const Message = ({ message }) => {
+  return (
+    <div
+      className="Message"
+      style={styles.message}
+    >
+      <Avatar user={message.user} />
+      <div style={styles.details}>
+        <Metadata message={message} />
+        <div className="body">
+          {message.body}
         </div>
-
-        {
-          messages.map(msg => (
-            <Message message={msg} key={msg.id} />
-          ))
-        }
       </div>
-    )
-  }
+    </div>
+  )
 }
 
 const styles = {
-  messageList: {
-    backgroundColor: 'white',
+  message: {
+    display: 'flex',
+    marginTop: '1rem',
+    padding: '0 1rem',
+  },
+
+  details: {
     flex: 1,
-    paddingBottom: '1rem',
-    overflowY: 'scroll',
-  },
-
-  roomAnnouncement: {
-    padding: '2rem 1rem',
-  },
-
-  h3: {
-    fontSize: '1.5rem',
+    paddingLeft: '0.5rem',
   },
 }
 
-export default MessageList
+export default Message
