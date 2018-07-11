@@ -3,20 +3,20 @@ import React from 'react'
 import UserInfo from './UserInfo'
 import RoomList from './RoomList'
 
-const Sidebar = (props) => {
+const Sidebar = ({ user, signOut, rooms }) => {
   return (
     <aside
       className="Sidebar"
       style={styles.sidebar}
     >
       <UserInfo
-        user={this.props.user}
-        signOut={this.props.signOut}
+        user={user}
+        signOut={signOut}
       />
       <h1 style={styles.h1}>XTBC 18</h1>
       <RoomList 
-      rooms={this.props.rooms}
-      setCurrentRoom = {this.props.setCurrentRoom} />
+      rooms={rooms}
+       />
     </aside>
   )
 }

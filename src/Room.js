@@ -1,12 +1,12 @@
 import React from 'react'
 import { StyleSheet, css } from 'aphrodite'
 
-const Room = (props) => {
-  
+const Room = ({ roomName }) => {
+
   return (
-    <li className={css(styles.item)} key={this.props.roomName}>
+    <li className={css(styles.item)} key={roomName}>
       <a href="/" className={css(styles.link)}>
-        
+        {roomName}
       </a>
     </li>
   )
